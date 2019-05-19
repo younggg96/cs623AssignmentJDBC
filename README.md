@@ -1,6 +1,6 @@
 # cs623assignmentJDBC
 
-Queries:
+# Queries:
 ● Get a submitted paper’s details by the author’s Primary Key. The query should return the following data (columns): Paper.Id, Paper.Title, Paper.Abstract, Author.EmailAddress, Author.FirstName, Author.LastName
 
 ● Get all reviews for a paper by the paper’s Id, where the paper was recommended to be published. The query should return the following data (columns): All columns from the Review table.

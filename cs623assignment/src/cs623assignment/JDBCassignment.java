@@ -63,9 +63,9 @@ public class JDBCassignment {
 		     * Question 4: Submit a new Paper
 		     */
 		    
-		    sql4 = "insert into author values('Gyoung@pace.edu', 'Tom', 'James')";
-		    sql5 = "insert into paper values(6, 'Javaweb', 'learning', 'learningJava')";
-		    sql6 = "insert into AUTHOR_SUBMITS_PAPER values('Gyoung1@pace.edu', 6)";
+		    sql4 = "insert into author values('Gyoung8@pace.edu', 'Tom', 'James')";
+		    sql5 = "insert into paper values(12, 'Javaweb', 'learning', 'learningJava')";
+		    sql6 = "insert into AUTHOR_SUBMITS_PAPER values(12, 'Gyoung8@pace.edu')";
 		    
 		    /**
 		     * Question 5: Deleting an author from the table
@@ -79,13 +79,15 @@ public class JDBCassignment {
 		    ResultSet rs3 = statement.executeQuery(sql3);
 		    
 		    ps1.setString(1, "tom123@pace.edu");
-		    ps2.setString(1, "aaa");
+		    ps2.setInt(1, 1);
 		    ResultSet rs1 = ps1.executeQuery();
 		    ResultSet rs2 = ps2.executeQuery();
 		    
 		    int update1, update2 = 0;
 		    
 		    //STEP 5: Extract data from result set
+		    System.out.println("==================================");
+		    System.out.println();
 		    
 		    while(rs1.next()) {
 		    	
@@ -107,10 +109,10 @@ public class JDBCassignment {
 		       
 		    }
 		    System.out.println("==================================");
+		    System.out.println();
 		    
 		    while(rs2.next()) {
 		    	
-			    	String string1 = rs2.getString("Recommendation");
 			    	int int1 = rs2.getInt("Id");
 			    	int int2 = rs2.getInt("MeritScore");
 			    	int int3 = rs2.getInt("PaperId");
@@ -118,8 +120,8 @@ public class JDBCassignment {
 			    	int int5 = rs2.getInt("ReviewerId");
 			    	int int6 = rs2.getInt("RelevanceScore");
 			    	int int7 = rs2.getInt("OriginalityScore");
+			    	String string1 = rs2.getString("Recommendation");
 			    	
-			    	System.out.println(" Reconmmendation " + string1);
 			    	System.out.println(" Id " + int1);
 			    	System.out.println(" MeritScore " + int2);
 			    	System.out.println(" PaperId " + int3);
@@ -127,23 +129,27 @@ public class JDBCassignment {
 			    	System.out.println(" RelevanceScore " + int6);
 			    	System.out.println(" OriginalityScore " + int7);
 			    	System.out.println(" ReviewerId " + int5);
+			    	System.out.println(" Reconmmendation " + string1);
 		    	
 		    }
 		    
 		    System.out.println("==================================");
+		    System.out.println();
 		    
 		    while(rs3.next()) {
 		    	
 			    	int num = rs3.getInt("numPapers");
-			    	System.out.println("Paper:" + num);
+			    	System.out.println("Question 3: The number of paper is " + num);
 		    }
 		    
 		    System.out.println("==================================");
+		    System.out.println();
 		    
 		    update1 = statement.executeUpdate(sql4) + statement.executeUpdate(sql5) + statement.executeUpdate(sql6);
 		    System.out.println("Question4: Effect line " + update1);
 		    
 		    System.out.println("==================================");
+		    System.out.println();
 		    try {
 		    		update2 = statement.executeUpdate(sql7);
 		    	
@@ -151,6 +157,7 @@ public class JDBCassignment {
 		    		System.out.println(se);
 		    } finally {
 		    		System.out.println("Question5: Effect line " + update2);
+		    		System.out.println();
 		    }
 		    
 		    
@@ -182,6 +189,7 @@ public class JDBCassignment {
 		    	   	 	se.printStackTrace();
 		       } //end finally try
 		   }//end try
+		 		System.out.println();
 		 		System.out.println("Goodbye!");
 		}//end main
 

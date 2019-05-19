@@ -1,6 +1,6 @@
 # cs623assignmentJDBC
 
-# Queries:
+### Queries:
 ● Get a submitted paper’s details by the author’s Primary Key. The query should return the following data (columns): Paper.Id, Paper.Title, Paper.Abstract, Author.EmailAddress, Author.FirstName, Author.LastName
 
 ● Get all reviews for a paper by the paper’s Id, where the paper was recommended to be published. The query should return the following data (columns): All columns from the Review table.
@@ -13,7 +13,7 @@
 If yes, print to the console the error you received. Also note in your message why the query failed. 
 If it didn’t fail, print a message explaining why you were able to delete the row.
 
-I use several sql String inside java file to make it.
+### I use several sql String inside java file to make it.
       /**
        * Question1: Get paper and author details by author ID (emailaddr)
        */
